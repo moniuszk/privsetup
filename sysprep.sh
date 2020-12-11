@@ -14,3 +14,13 @@ export all_proxy="socks5://10.152.152.10:9100"
 cat >/etc/sudoers.d/keep_proxy_env.conf <<EOF
 Defaults env_keep += "ftp_proxy http_proxy https_proxy no_proxy all_proxy"
 EOF
+
+cat >/etc/netctl/ethernet-static <<EOF
+Description=''
+Interface=$NETDEV
+Connection=ethernet
+IP=static
+Address=('10.152.152.13/18')
+Gateway='10.152.152.10'
+DNS=('10.152.152.10')
+EOF
