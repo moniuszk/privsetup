@@ -2,6 +2,9 @@
 
 set -ex
 
+SRC_DIR=$(dirname $(readlink -f "${BASH_SOURCE[0]}"))
+cd $SRC_DIR/../proxy-list
+
 PORT=$1
 
 . ~/.filter.sh
